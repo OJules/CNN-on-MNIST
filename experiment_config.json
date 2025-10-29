@@ -1,0 +1,32 @@
+{
+  "experiment_date": "2025-10-29T15:48:28.044462",
+  "hyperparameters_tested": {
+    "kernel_sizes": [
+      3,
+      5,
+      7
+    ],
+    "learning_rates": [
+      0.0001,
+      0.001,
+      0.01
+    ],
+    "num_conv_layers": [
+      2,
+      3
+    ]
+  },
+  "fixed_parameters": {
+    "batch_size": 128,
+    "epochs": 15,
+    "dropout": 0.5,
+    "optimizer": "Adam"
+  },
+  "best_model": {
+    "kernel_size": 3,
+    "learning_rate": 0.001,
+    "num_layers": 3,
+    "test_accuracy": 99.35,
+    "val_accuracy": 99.24166666666666
+  }
+}
