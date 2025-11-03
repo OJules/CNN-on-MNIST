@@ -1,0 +1,59 @@
+# 📘 MNIST Pattern Recognition- Final Report
+
+**Report Editor: Jules Odje**
+
+---                 
+
+## 🚀1. Final Model Accuracy Summary
+
+**Conclusion:** The CNN model achieves the accuracy of **99.35%** on the test set.
+
+---
+## 💡2. CNN
+>In accordance with the task requirements, systematic experiments were conducted on the hyperparameters of the CNN model, including kernel size, learning rate, and number of layers.
+
+### 💡2.1 Best CNN Model
+
+* **Best test set accuracy:** **99.35%**
+* **Optimal Parameters:**
+  * `Kernel Size`: 3
+  * `Learning Rate`: 0.001
+  * `Number of Conv Layers`: 3
+
+### 💡2.2 Training/Validation Curve for the Best Model
+
+> The figure below (from `cnn/best_model_training_curves.png`) shows the loss and accuracy of the best model (K=3, LR=0.001, Layers=3) over 15 training epochs. The curves for the training and validation sets fit very well, indicating strong model generalization without overfitting.
+---
+Best_model_training_curves![alt text](best_model_training_curves.png)
+
+---
+### 💡2.3 Comparison of Hyperparameter Optimization Methods
+
+>The data table summarizes results from `cnn/experiment_results.csv` and `cnn/RESULTS_REPORT.md`, showcasing comparisons of different hyperparameter combinations:
+
+**Table 2.1: Learning Rate vs. Accuracy** (Fixed Kernel=3, Layers=2)
+| Learning Rate | Validation Accuracy | Test Accuracy |
+| :--- | :--- | :--- |
+| 0.0001 | 98.81% | 98.95% |
+| **0.001** | **99.11%** | **99.31%** |
+| 0.01 | 11.22% | 11.35% |
+
+*Findings: A learning rate of 0.01 is too high, preventing the model from converging. 0.001 is the optimal choice.*
+
+**Table 2.2: Kernel Size vs. Accuracy**(Fixed LR=0.001, Layers=2)
+
+| Convolution Kernel Size | Validation Accuracy | Test Accuracy |
+| :--- | :--- | :--- |
+| 3 | 99.11% | 99.31% |
+| 5 | 99.24% | 99.27% |
+| 7 | 99.28% | 99.31% |
+
+*Findings: Convolution kernel size has little impact on final performance, though larger kernels (5 or 7) appear to marginally improve validation set performance.*
+
+**Table 2.3: Number of Layers vs. Accuracy** (Fixed Kernel=3, LR=0.001)
+| Number of Convolutional Layers | Validation Accuracy | Test Accuracy |
+| :--- | :--- | :--- |
+| 2 | **99.11%** | **99.31%** |
+| 3 | **99.24%** | **99.35%** |
+
+*Findings: Adding a third convolutional layer significantly improved the model's final performance.*
